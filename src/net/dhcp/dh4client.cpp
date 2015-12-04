@@ -211,11 +211,13 @@ namespace net
     opt = conv_option(dhcp->options + 17);
     opt->code   = DHO_END;
     opt->length = 0;
+
+    opt = conv_option(dhcp->options + 18);
     
     ////////////////////////////////////////////////////////
     auto& socket = stack.udp().bind(DHCP_SOURCE_PORT);
     /// broadcast our DHCP plea as 0.0.0.0:67
-    socket.bcast(IP4::INADDR_ANY, DHCP_DEST_PORT, packet, packetlen);
+    socket.bcast(IP4::INADDR_ANY, DHCP_DEST_PORT, packet, ((char*)opt)-packet);
     
     socket.onRead(
     [this] (Socket<UDP>& sock, IP4::addr addr, UDP::port port, 
