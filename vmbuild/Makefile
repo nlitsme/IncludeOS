@@ -1,5 +1,5 @@
-CPP=clang++-3.6
-CPPOPTS = -std=c++11 -c -Wall -Wextra -O3
+CPP=clang++
+CPPOPTS = -std=c++11 -c -Wall -Wextra -O3 -I ../src/elf  -I ../src/dummy
 OBJS = vmbuild.o
 OUT = vmbuild
 

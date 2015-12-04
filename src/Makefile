@@ -28,10 +28,10 @@ DEBUG_OPTS = -ggdb3
 ###################################################
 # Set defaults if not defined
 ifndef CC_INC
-	CC_INC = clang-3.6
+	CC_INC = clang
 endif
 ifndef CPP_INC
-	CPP_INC = clang++-3.6
+	CPP_INC = clang++
 endif
 ifndef LD
 	LD = ld

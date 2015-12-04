@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 LICENSE_FILE=license_header.txt
 LICENSE_FILE_OLD=license_header_old.txt
 licenselen=$(wc -l < $LICENSE_FILE)

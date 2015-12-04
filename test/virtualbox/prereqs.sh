@@ -1,3 +1,4 @@
+set -e
 #
 # Prerequisites for building VirtualBox from source
 #

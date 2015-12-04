@@ -1,4 +1,5 @@
 # Upgrade packages to solve dependencies
+set -e
 
 origdir=`pwd`
 

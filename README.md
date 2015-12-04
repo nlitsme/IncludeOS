@@ -62,7 +62,7 @@ Once you have a system with the prereqs (virtual or not), you can choose a full 
     $ ./etc/install_from_bundle.sh
 
 **The script will:**
-* Install the required dependencies: `curl make clang-3.6 nasm bridge-utils qemu`
+* Install the required dependencies: `curl make clang nasm bridge-utils qemu`
 * Download the latest binary release bundle from github, using the github API.
 * Unzip the bundle to `$INCLUDEOS_INSTALL_LOC` - which you can set in advance, or which defaults to `$HOME`
 * Create a network bridge called `include0`, for tap-networking
@@ -80,7 +80,7 @@ About a minute or two (On a 4-core virtualbox Ubuntu VM, runing on a 2015 MacBoo
     
 **The script will:**
 * Install all the tools required for building IncludeOS, and all libraries it depends on:
-  * `build-essential make nasm texinfo clang-3.6 cmake ninja-build subversion zlib1g-dev libtinfo-dev`
+  * `build-essential make nasm texinfo clang cmake ninja-build subversion zlib1g-dev libtinfo-dev`
 * Build a GCC cross compiler along the lines of the [osdev howto](http://wiki.osdev.org/GCC_Cross-Compiler) which we really only need to build `libgcc` and `newlib`.
 * Build [Redhat's newlib](https://sourceware.org/newlib/) using the cross compiler, and install it according to `./etc/build_newlib.sh`. The script will also install it to the mentioned location.
 * Build a 32-bit version of [LLVM's libc++](http://libcxx.llvm.org/) tailored for IncludeOS. 

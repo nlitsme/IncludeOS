@@ -1,3 +1,4 @@
+set -e
 function or_die {
     if [ $? -ne 0 ]; 
     then 

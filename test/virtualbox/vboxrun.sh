@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 #
 # Run and re-run an Include OS vm after compilation, properly replacing the disk.

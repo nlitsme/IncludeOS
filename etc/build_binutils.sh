@@ -1,3 +1,4 @@
+set -e
 pushd $BUILD_DIR
 
 if [ ! -f binutils-$binutils_version.tar.gz ]; then

@@ -16,6 +16,8 @@ endif
 # Shorter name
 INSTALL = $(INCLUDEOS_INSTALL)
 
+BUILDDIR = $(HOME)/IncludeOS_build/binutils/i686-elf/bin
+
 # Compiler/Linker
 ###################################################
 
@@ -36,8 +38,8 @@ INC_LIBCXX=$(INSTALL)/libcxx/include
 
 DEBUG_OPTS = -ggdb3 -v
 
-CPP = clang++-3.6 -target i686-elf
-LD  = ld 
+CPP = clang++ -target i686-elf
+LD  = $(BUILDDIR)/ld 
 
 INCLUDES = -I$(INC_LIBCXX) -I$(INSTALL)/api/sys -I$(INC_NEWLIB) -I$(INSTALL)/api 
 

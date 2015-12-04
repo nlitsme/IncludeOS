@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 . set_traps.sh
 # qRename tag $1 to $2'
 

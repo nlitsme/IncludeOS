@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 # Zip-file name
 tag=`git describe --abbrev=0`
@@ -7,9 +8,9 @@ filename_tag=`echo $tag | tr . -`
 # Where to place the installation bundle
 DIR_NAME="IncludeOS_install"
 
-[ ! -v INSTALL_DIR ] && INSTALL_DIR=$HOME/$DIR_NAME
-[ ! -v BUILD_DIR ] && BUILD_DIR=$HOME/IncludeOS_build
-[ ! -v TEMP_INSTALL_DIR ] && TEMP_INSTALL_DIR=$BUILD_DIR/IncludeOS_TEMP_install
+[ -z $INSTALL_DIR ] && INSTALL_DIR=$HOME/$DIR_NAME
+[ -z $BUILD_DIR ] && BUILD_DIR=$HOME/IncludeOS_build
+[ -z $TEMP_INSTALL_DIR ] && TEMP_INSTALL_DIR=$BUILD_DIR/IncludeOS_TEMP_install
 
 echo ">>> Creating Installation Bundle as $INSTALL_DIR"
 

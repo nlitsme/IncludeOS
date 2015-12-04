@@ -1,10 +1,11 @@
 #! /bin/bash
+set -e
 
 # Start as a GDB service, for debugging
 # (0 means no, anything else yes.)
 export IMAGE=$1
 
-[ ! -v INCLUDEOS_HOME ] && INCLUDEOS_HOME=$HOME/IncludeOS_install
+[ -z $INCLUDEOS_HOME ] && INCLUDEOS_HOME=$HOME/IncludeOS_install
 
 DEBUG=0
 

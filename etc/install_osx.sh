@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 # Install the IncludeOS libraries (i.e. IncludeOS_home) from binary bundle
 # ...as opposed to building them all from scratch, which takes a long time
@@ -17,7 +18,7 @@
 export INCLUDEOS_HOME=$INCLUDEOS_INSTALL_LOC/IncludeOS_install
 
 # Install dependencies
-#DEPENDENCIES="curl make clang-3.6 nasm bridge-utils qemu"
+#DEPENDENCIES="curl make clang nasm bridge-utils qemu"
 #echo ">>> Installing dependencies (requires sudo):"
 #echo "    Packages: $DEPENDENCIES"
 #sudo apt-get update
@@ -74,6 +75,10 @@ fi
 
 # Install
 gzip -c $filename | tar xopf - -C $INCLUDEOS_INSTALL_LOC
+
+# fix problem on osx
+sed -i -e 's/^#define _LIBCPP_HAS_CATOPEN 1/\/\/&/'  $INCLUDEOS_INSTALL_LOC/libcxx/include/__config
+
 
 ### Install Binutils - needed for linking ###
 

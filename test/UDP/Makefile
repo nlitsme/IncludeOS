@@ -36,7 +36,7 @@ INC_LIBCXX=$(INSTALL)/libcxx/include
 
 DEBUG_OPTS = -ggdb3 -v
 
-CPP = clang++-3.6 -target i686-elf
+CPP = clang++ -target i686-elf
 LD  = ld 
 
 INCLUDES = -I$(INC_LIBCXX) -I$(INSTALL)/api/sys -I$(INC_NEWLIB) -I$(INSTALL)/api 

@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 JOBS=12
 SERVICE=test_ipv6
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 IMAGE=debug/$SERVICE.img
 
 # Start as a GDB service, for debugging

@@ -1,4 +1,5 @@
 #! /bin/sh
+set -e
 
 BRIDGE=include0
 NETMASK=255.255.0.0

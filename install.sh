@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 . ./etc/set_traps.sh
 
 export BUILD_DIR=$HOME/IncludeOS_build
@@ -25,20 +26,20 @@ export gcc_version=5.1.0
 export binutils_version=2.25
 
 # Options to skip steps
-[ ! -v do_binutils ] && do_binutils=1
-[ ! -v do_gcc ] && do_gcc=1
-[ ! -v do_newlib ] && do_newlib=1
-[ ! -v do_includeos ] &&  do_includeos=1
-[ ! -v do_llvm ] &&  do_llvm=1
+[ -z $do_binutils ] && do_binutils=1
+[ -z $do_gcc ] && do_gcc=1
+[ -z $do_newlib ] && do_newlib=1
+[ -z $do_includeos ] &&  do_includeos=1
+[ -z $do_llvm ] &&  do_llvm=1
 # TODO: These should be determined by inspecting if local llvm repo is up-to-date
 
-[ ! -v install_llvm_dependencies ] &&  export install_llvm_dependencies=1
-[ ! -v download_llvm ] && export download_llvm=1
+[ -z $install_llvm_dependencies ] &&  export install_llvm_dependencies=1
+[ -z $download_llvm ] && export download_llvm=1
 
 
 
 # BUILDING IncludeOS
-PREREQS_BUILD="build-essential make nasm texinfo clang-$clang_version clang++-$clang_version"
+PREREQS_BUILD="build-essential make nasm texinfo clang clang++"
 
 echo -e "\n\n >>> Trying to install prerequisites for *building* IncludeOS"
 echo -e  "        Packages: $PREREQS_BUILD \n"

@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 . ./etc/set_traps.sh
 
 pushd examples/demo_service

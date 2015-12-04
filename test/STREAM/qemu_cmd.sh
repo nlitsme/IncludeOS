@@ -1,3 +1,4 @@
+set -e
 
 export QEMU="kvm" #qemu-system-x86_64
 

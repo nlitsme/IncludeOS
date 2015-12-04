@@ -1,4 +1,5 @@
 # Bash utils
+set -e
 . $IncludeOS_src/etc/set_traps.sh
 
 mkdir -p $BUILD_DIR

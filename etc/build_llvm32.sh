@@ -1,5 +1,6 @@
 #! /bin/bash
-set -e # Exit immediately on error (we're trapping the exit signal)
+set -e
+# Exit immediately on error (we're trapping the exit signal)
 trap 'previous_command=$this_command; this_command=$BASH_COMMAND' DEBUG
 trap 'echo -e "\nINSTALL FAILED ON COMMAND: $previous_command\n"' EXIT
 
@@ -76,8 +77,8 @@ OPTS+=-DCMAKE_BUILD_TYPE=MinSizeRel" "
 #OPTS+=-DCMAKE_BUILD_TYPE=Release" "
 
 # Can't build libc++ with g++ unless it's a cross compiler (need to specify target)
-OPTS+=-DCMAKE_C_COMPILER=clang-$clang_version" "
-OPTS+=-DCMAKE_CXX_COMPILER=clang++-$clang_version" " # -std=c++11" "
+OPTS+=-DCMAKE_C_COMPILER=clang" "
+OPTS+=-DCMAKE_CXX_COMPILER=clang++" " # -std=c++11" "
 
 #
 # WARNING: It seems imossible to pass in cxx-flags like this; I've tried \' \\" \\\" etc.
